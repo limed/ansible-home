@@ -1,7 +1,7 @@
 ---
 - name: 'Copy le-renew script'
   action: copy
-    src: 'files/le-renew'
+    src: 'le-renew'
     dest: '/usr/local/sbin/le-renew'
     owner: root
     group: root

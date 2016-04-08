@@ -7,7 +7,7 @@
 
 - name: 'Copy gitconfig'
   copy:
-    src: "files/{{ item }}"
+    src: {{ item }}
     dest: "{{ home_directory }}/.{{ item }}"
     owner: "{{ username }}"
     group: "{{ username }}"
