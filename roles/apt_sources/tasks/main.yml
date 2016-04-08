@@ -1,0 +1,11 @@
+---
+- name: 'Add base ubuntu repo'
+  template:
+    src: 'sources.list.j2'
+    dest: '/etc/apt/sources.list'
+    owner: root
+    group: root
+    mode: '0644'
+  notify: 'Perform an apt-get update'
+
+- meta: flush_handlers
