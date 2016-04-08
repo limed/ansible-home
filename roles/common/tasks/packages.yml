@@ -25,3 +25,12 @@
     - python
     - python-pip
     - python-setuptools
+    - vim
+    - fail2ban
+    - gnupg
+    - keychain
+    - mtr-tiny
+    - rar
+    - screen
+    - tcpdump
+    - build-essential
