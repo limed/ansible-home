@@ -1,0 +1,26 @@
+---
+- name: Update APT package cache
+  action: apt update_cache=yes
+
+- name: Upgrade APT to the lastest packages
+  action: apt upgrade=safe
+
+- name: Install unattended-upgrades
+  action: apt pkg=unattended-upgrades state=present
+
+- name: Install prerequisite packages
+  apt:
+    pkg: {{ item }}
+    state: present
+    update_cache: yes
+  with_items:
+    - git
+    - htop
+    - weechat
+    - curl
+    - jq
+    - unrar
+    - openssl
+    - python
+    - python-pip
+    - python-setuptools

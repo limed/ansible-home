@@ -1,0 +1,16 @@
+---
+- name: 'Install git'
+  apt:
+    name: 'git'
+    update_cache: 'yes'
+    state: 'latest'
+
+- name: 'Copy gitconfig'
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ home_directory }}/.{{ item }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0644'
+  with_items:
+    - 'gitconfig'

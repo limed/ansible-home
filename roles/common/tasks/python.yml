@@ -1,0 +1,7 @@
+---
+- name: Install prequisite python packages
+  pip:
+    name={{ item }
+  with_items:
+    - boto
+    - awscli
