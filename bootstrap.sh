@@ -3,6 +3,10 @@
 export DEBIAN_FRONTEND=noninteractive
 SUDO="sudo -E"
 
+echo "Install software-properties-common"
+$SUDO apt-get -qq update"
+$SUDO apt-get -y install software-properties-common"
+
 echo "Installing git"
 $SUDO apt-add-repository -y ppa:git-core/ppa
 $SUDO apt-get -qq update
