@@ -8,7 +8,7 @@
 - name: Install unattended-upgrades
   action: apt pkg=unattended-upgrades state=present
 
-- name: Install prerequisite packages
+- name: Install common packages
   apt:
     pkg: {{ item }}
     state: present
@@ -21,6 +21,7 @@
     - jq
     - unrar
     - openssl
+    - ntpdate
     - python
     - python-pip
     - python-setuptools
