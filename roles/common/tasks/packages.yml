@@ -5,11 +5,11 @@
   apt:
     update_cache: yes
 
-- name: Upgrade APT to the lastest packages
-  become: yes
-  become_user: sudo
-  apt:
-    upgrade:safe
+  #- name: Upgrade APT to the lastest packages
+  #become: yes
+  #become_user: sudo
+  #apt:
+  #upgrade: safe
 
   #- name: Install unattended-upgrades
   #action: apt pkg=unattended-upgrades state=present
