@@ -1,0 +1,25 @@
+---
+- name: 'Create .vim directory'
+  file:
+    path: "{{ home_directory }}/.vim"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+    state: directory
+
+- name: 'Create .vim subdirectory'
+  file:
+    path: "{{ home_directory }}/.vim/{{ item }}"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+    state: directory
+  with_items:
+    - autoload
+    - bundle
+
+- name: 'Download and install pathogen'
+  get_url:
+    url: 'https://tpo.pe/pathogen.vim'
+    dest: "{{ home_directory }}"/.vim/autoload/pathogen.vim"
+    mode: '0644'
