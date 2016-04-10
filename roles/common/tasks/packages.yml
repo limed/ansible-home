@@ -1,19 +1,4 @@
 ---
-- name: Update APT package cache
-  become: yes
-  become_method: sudo
-  apt:
-    update_cache: yes
-
-  #- name: Upgrade APT to the lastest packages
-  #become: yes
-  #become_user: sudo
-  #apt:
-  #upgrade: safe
-
-  #- name: Install unattended-upgrades
-  #action: apt pkg=unattended-upgrades state=present
-
 - name: Install common packages
   become: yes
   become_method: sudo
