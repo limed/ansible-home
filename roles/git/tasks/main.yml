@@ -1,16 +1,16 @@
 ---
 - name: 'Install git'
+  become: yes
+  become_method: sudo
   apt:
     name: 'git'
     update_cache: 'yes'
     state: 'latest'
 
 - name: 'Copy gitconfig'
-  copy:
-    src: {{ item }}
-    dest: "{{ home_directory }}/.{{ item }}"
+  template:
+    src: gitconfig.j2
+    dest: "{{ home_directory }}/.gitconfig"
     owner: "{{ username }}"
     group: "{{ username }}"
     mode: '0644'
-  with_items:
-    - 'gitconfig'
