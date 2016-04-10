@@ -1,5 +1,7 @@
 ---
 - name: Install prequisite python packages
+  become: yes
+  become_method: sudo
   pip:
     name: "{{ item }}"
     state: present
