@@ -1,5 +1,7 @@
 ---
 - name: 'Add base ubuntu repo'
+  become: yes
+  become_method: sudo
   template:
     src: 'sources.list.j2'
     dest: '/etc/apt/sources.list'
