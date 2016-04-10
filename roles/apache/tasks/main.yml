@@ -1,11 +1,13 @@
 ---
 - name: 'Install apache2'
+  sudo: yes
   apt:
     name: 'apache2'
     update_cache: 'yes'
     state: latest
 
 - name: 'Enable mod_rewrite'
+  sudo: yes
   apache2_module:
     name: 'rewrite'
     state: 'present'
@@ -13,6 +15,7 @@
     - 'restart apache2'
 
 - name: 'Enable mod_ssl'
+  sudo: yes
   apache2_module:
     name: 'ssl'
     state: 'present'
