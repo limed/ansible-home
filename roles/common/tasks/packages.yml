@@ -1,16 +1,24 @@
 ---
 - name: Update APT package cache
-  action: apt update_cache=yes
+  become: yes
+  become_method: sudo
+  apt:
+    update_cache: yes
 
 - name: Upgrade APT to the lastest packages
-  action: apt upgrade=safe
+  become: yes
+  become_user: sudo
+  apt:
+    upgrade:safe
 
-- name: Install unattended-upgrades
-  action: apt pkg=unattended-upgrades state=present
+  #- name: Install unattended-upgrades
+  #action: apt pkg=unattended-upgrades state=present
 
 - name: Install common packages
+  become: yes
+  become_method: sudo
   apt:
-    pkg: {{ item }}
+    pkg: "{{ item }}"
     state: present
     update_cache: yes
   with_items:
