@@ -11,8 +11,8 @@
   become_method: sudo
   service:
     name: 'ssh'
-    enabled: "{{ sshd_enabled | default(yes) }}"
-    state: "{{ sshd_state | default(started) }}"
+    enabled: "{{ sshd_enabled | default('yes') }}"
+    state: "{{ sshd_state | default('started') }}"
 
 - name: "Disable root login"
   become: yes
