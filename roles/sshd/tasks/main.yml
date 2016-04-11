@@ -1,0 +1,25 @@
+---
+- name: 'Install openssh'
+  become: yes
+  become_method: sudo
+  apt:
+    pkg: 'opessh-server'
+    state: 'present'
+
+- name: 'Autostart sshd'
+  become: yes
+  become_sudo: sudo
+  service:
+    name: 'ssh'
+    enabled: "{{ sshd_enabled | default(yes) }}"
+    state: "{{ sshd_state | default(started) }}"
+
+- name: "Disable root login"
+  become: yes
+  become_method: sudo
+  lineinfile:
+    dest: '/etc/ssh/sshd_config'
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin no"
+    state: present
+  notify: 'Restart sshd'
