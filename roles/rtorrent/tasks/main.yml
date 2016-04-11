@@ -1,10 +1,14 @@
 ---
 - name: 'Install rtorrent'
+  become: yes
+  become_method: sudo
   apt:
     name: 'rtorrent'
     state: present
 
 - name: 'Install init script'
+  become: yes
+  become_method: sudo
   template:
     src: 'rtorrent.j2'
     dest: '/etc/init.d/rtorrent'
