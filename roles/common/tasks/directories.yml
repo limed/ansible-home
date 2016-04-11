@@ -5,6 +5,6 @@
   file:
     path: '/scratch'
     owner: root
-    group: root
-    mode: '0755'
+    group: sambashare
+    mode: '0775'
     state: directory
