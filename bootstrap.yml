@@ -7,6 +7,7 @@
   roles:
     - role: 'apt_sources'
     - role: 'common'
+    - role: 'sshd'
     - role: 'git'
       git_user: 'limed'
       git_email: 'limed@sudoers.org'
