@@ -3,7 +3,7 @@
   become: yes
   become_method: sudo
   apt:
-    pkg: 'opessh-server'
+    pkg: 'openssh-server'
     state: 'present'
 
 - name: 'Autostart sshd'
