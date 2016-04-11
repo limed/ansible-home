@@ -15,4 +15,5 @@
     month: 1
     user: root
     job: /usr/local/sbin/le-renew {{ le_domain }} >> /var/log/le-renew.log
+    cron_file: le-renew
 
