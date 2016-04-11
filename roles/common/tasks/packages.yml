@@ -27,3 +27,17 @@
     - screen
     - tcpdump
     - build-essential
+
+- name: 'Install apt packages'
+  become: yes
+  become_method: sudo
+  apt:
+    pkg: unattended-upgrades
+    state: present
+
+- name: 'Adjust APT update intervals'
+  become: yes
+  become_method: sudo
+  copy:
+    src: apt_periodic
+    dest: /etc/apt/apt.conf.d/10periodic
