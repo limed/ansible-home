@@ -8,7 +8,7 @@
 
 - name: 'Autostart sshd'
   become: yes
-  become_sudo: sudo
+  become_method: sudo
   service:
     name: 'ssh'
     enabled: "{{ sshd_enabled | default(yes) }}"
