@@ -1,0 +1,19 @@
+---
+- name: 'Install rtorrent'
+  apt:
+    name: 'rtorrent'
+    state: present
+
+- name: 'Install init script'
+  template:
+    src: 'rtorrent.j2'
+    dest: '/etc/init.d/rtorrent'
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: 'Enable rtorrent service'
+  service:
+    name: rtorrent
+    state: started
+    enabled: yes
