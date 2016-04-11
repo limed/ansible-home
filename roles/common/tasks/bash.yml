@@ -1,0 +1,9 @@
+---
+- name: 'Set editor environment variable'
+  become: yes
+  become_method: sudo
+  lineinfile:
+    dest: '/etc/environment'
+    regexp: '^ENVIRONMENT'
+    line: 'ENVIRONMENT=vim'
+    state: present
