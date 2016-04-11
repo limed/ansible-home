@@ -1,5 +1,7 @@
 ---
 - name: 'Create /scratch directory'
+  become: yes
+  become_method: sudo
   file:
     path: '/scratch'
     owner: root
