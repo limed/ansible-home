@@ -36,3 +36,8 @@
     name: 'docker'
     state: 'started'
     enabled: 'yes'
+
+- name: 'Add user to group docker'
+  user:
+    name: "{{ docker_username }}"
+    group: 'docker'
