@@ -11,7 +11,7 @@
 - name: 'Add ssh keys from github'
   authorized_keys:
     user: "{{ account_username }}"
-    key: "https://github.com/{{ github_username }}.keys"
+    key: "{{ account_sshkey }}"
 
 - name: 'Create an /etc/sudoers.d entry for this user'
   become: yes
