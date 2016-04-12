@@ -1,4 +1,18 @@
 ---
+- name: 'Create user'
+  become: yes
+  become_method: sudo
+  user:
+    name: "{{ account_username }}"
+    comment: "{{ account_fullname }}"
+    home: "/home/{{ account_username }}"
+    shell: '/bin/bash'
+
+- name: 'Add ssh keys from github'
+  authorized_keys:
+    user: "{{ account_username }}"
+    key: "https://github.com/{{ github_username }}.keys"
+
 - name: 'Create an /etc/sudoers.d entry for this user'
   become: yes
   become_method: sudo
