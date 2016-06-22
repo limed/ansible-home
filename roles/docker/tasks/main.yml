@@ -53,6 +53,7 @@
   user:
     name: "{{ docker_username }}"
     group: 'docker'
+    append: yes
 
 - name: 'Create docker volume folder'
   become: yes
