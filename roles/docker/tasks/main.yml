@@ -41,3 +41,13 @@
   user:
     name: "{{ docker_username }}"
     group: 'docker'
+
+- name: 'Create docker volume folder'
+  become: yes
+  become_method: sudo
+  file:
+    path: '/scratch/docker'
+    owner: "{{ docker_username }}"
+    group: "{{ docker_group }}"
+    mode: '0775'
+    state: directory

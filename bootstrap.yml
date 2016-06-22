@@ -9,6 +9,9 @@
     - role: 'common'
     - role: 'rtorrent'
     - role: 'sshd'
+    - role: 'docker'
+      docker_username: 'limed'
+      docker_group: 'limed
     - role: 'git'
       git_user: 'limed'
       git_email: 'limed@sudoers.org'
