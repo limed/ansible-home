@@ -41,3 +41,11 @@
   copy:
     src: apt_periodic
     dest: /etc/apt/apt.conf.d/10periodic
+
+- name: Install pip packages:
+  become: yes
+  become_method: sudo
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - docker-py
