@@ -1,0 +1,4 @@
+# File managed by ansible
+SHELL=/bin/bash
+USER=limed
+0 1 * * *   limed   /usr/local/bin/backup.sh
