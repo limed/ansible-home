@@ -6,13 +6,19 @@
 
   roles:
     - role: 'apt_sources'
+      tags: apt_sources
     - role: 'common'
+      tags: common
     - role: 'rtorrent'
+      tags: rtorrent
     - role: 'sshd'
+      tags: sshd
     - role: 'docker'
+      tags: docker
       docker_username: 'limed'
       docker_group: 'limed'
     - role: 'git'
+      tags: git
       git_user: 'limed'
       git_email: 'limed@sudoers.org'
       github_username: 'limed'
