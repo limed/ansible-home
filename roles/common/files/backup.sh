@@ -9,4 +9,4 @@ s3_remote_bucket="limed-sudoers-backupbucket"
 
 # first things first delete all the cruft
 find ${backup_path} -name '*.DS_Store' -type f -delete
-aws s3 sync ${backup_path} s3://limed-sudoers-backupbucket --delete --quiet
+aws s3 sync ${backup_path} s3://${s3_remote_bucket} --delete --quiet
