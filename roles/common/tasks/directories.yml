@@ -1,4 +1,11 @@
 ---
+- name: 'Create sambashare group'
+  become: yes
+  group:
+    name: sambashare
+    system: yes
+    state: present
+
 - name: 'Create /scratch directory'
   become: yes
   become_method: sudo
