@@ -47,5 +47,6 @@
   become_method: sudo
   pip:
     name: "{{ item }}"
+  executable: pip3
   with_items:
     - docker-py
