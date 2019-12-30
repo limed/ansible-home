@@ -7,7 +7,7 @@
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
-  notify: 'apt-get update'
+  notify: 'Perform an apt-get update'
 
 - name: 'Create docker sources.list file'
   become: yes
@@ -18,17 +18,16 @@
     owner: root
     group: root
     mode: 0644
-  notify: 'apt-get update'
+  notify: 'Perform an apt-get update'
 
 - name: 'Install pre-req docker packages'
   become: yes
   become_method: sudo
   apt:
-    name: "{{ item }}"
+    name:
+      - apt-transport-https
+      - ca-certificates
     state: present
-  with_items:
-    - apt-transport-https
-    - ca-certificates
 
 - meta: flush_handlers
 
