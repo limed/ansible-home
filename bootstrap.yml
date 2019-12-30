@@ -9,8 +9,6 @@
       tags: apt_sources
     - role: 'common'
       tags: common
-    - role: 'rtorrent'
-      tags: rtorrent
     - role: 'sshd'
       tags: sshd
     - role: 'docker'
