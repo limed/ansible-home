@@ -35,7 +35,9 @@
   become: yes
   become_method: sudo
   apt:
-    name: 'docker-ce'
+    name:
+      - docker-ce
+      - docker-compose
     state: present
 
 - name: 'Start docker service'
