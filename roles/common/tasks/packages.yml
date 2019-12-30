@@ -46,7 +46,5 @@
   become: yes
   become_method: sudo
   pip:
-    name: "{{ item }}"
-  executable: pip3
-  with_items:
-    - docker-py
+    name: [ "docker-py" ]
+    executable: pip3
