@@ -15,3 +15,18 @@
     group: sambashare
     mode: '0775'
     state: directory
+
+- name: 'Create /srv directories'
+  file:
+    path: '/srv/filedumpster'
+    mode: '0755'
+    state: directory
+
+- name: 'Create /data directories'
+  file:
+    path:
+      - '/data'
+      - '/data/sabnzbd'
+      - '/data/media'
+    mode: '0755'
+    state: directory
