@@ -12,7 +12,7 @@
   file:
     path: '/scratch'
     owner: root
-    group: sambashare
+    group: docker
     mode: '0775'
     state: directory
 
