@@ -63,5 +63,5 @@
     path: '/docker'
     owner: "{{ docker_username }}"
     group: "{{ docker_group }}"
-    mode: '0755'
+    mode: '0775'
     state: directory
