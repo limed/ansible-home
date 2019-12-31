@@ -17,12 +17,16 @@
     state: directory
 
 - name: 'Create /srv directories'
+  become: yes
+  become_method: sudo
   file:
     path: '/srv/filedumpster'
     mode: '0755'
     state: directory
 
 - name: 'Create /data directories'
+  become: yes
+  become_method: sudo
   file:
     path:
       - '/data'

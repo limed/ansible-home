@@ -3,9 +3,9 @@
   become: yes
   become_method: sudo
   pip:
-    name: "{{ item }}"
+    name:
+      - boto3
+      - awscli
+      - docker-py
     state: present
     executable: pip3
-  with_items:
-    - boto3
-    - awscli
