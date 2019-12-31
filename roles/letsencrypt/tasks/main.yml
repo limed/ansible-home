@@ -13,6 +13,6 @@
   get_url:
     url: https://raw.githubusercontent.com/Neilpang/acme.sh/master/acme.sh
     dest: '/opt/acme/acme.sh'
-    gid: root
-    uid: root
+    group: root
+    owner: root
     mode: 0755
