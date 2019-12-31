@@ -3,30 +3,9 @@
   become: yes
   become_method: sudo
   apt:
-    pkg: "{{ item }}"
+    pkg: "{{ apt_packages }}"
     state: present
     update_cache: yes
-  with_items:
-    - git
-    - htop
-    - weechat
-    - curl
-    - jq
-    - unrar
-    - openssl
-    - ntpdate
-    - python
-    - python3-pip
-    - python3-setuptools
-    - vim
-    - fail2ban
-    - gnupg
-    - keychain
-    - mtr-tiny
-    - rar
-    - screen
-    - tcpdump
-    - build-essential
 
 - name: 'Install apt packages'
   become: yes

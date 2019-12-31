@@ -6,3 +6,19 @@
     name: "{{ pip_packages }}"
     state: present
     executable: pip3
+
+- name: 'Default python to python3'
+  become: yes
+  become_method: sudo
+  alternatives:
+    name: python
+    path: /usr/bin/python3
+    priority: 10
+
+- name: 'Default pip to pip3'
+  become: yes
+  become_method: sudo
+  alternatives:
+    name: pip
+    path: /usr/bin/pip3
+    priority: 10
