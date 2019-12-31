@@ -25,3 +25,4 @@ apt_packages:
   - screen
   - tcpdump
   - build-essential
+  - nfs-common
