@@ -48,13 +48,13 @@
     state: 'started'
     enabled: 'yes'
 
-- name: 'Add user to group docker'
-  become: yes
-  become_method: sudo
-  user:
-    name: "{{ docker_username }}"
-    group: 'docker'
-    append: yes
+    #- name: 'Add user to group docker'
+    #become: yes
+    #become_method: sudo
+    #user:
+      #name: "{{ docker_username }}"
+      #group: 'docker'
+      #append: yes
 
 - name: 'Create docker directory'
   become: yes
