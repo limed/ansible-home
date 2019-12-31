@@ -27,36 +27,36 @@
 - name: 'Copy vimrc'
   copy:
     src: 'vimrc'
-    dest: "{{ lookup('env', 'HOME') }}/.vimrc"
-    owner: "{{ lookup('env', 'USER') }}"
+    dest: "{{ home_directory }}/.vimrc"
+    owner: "{{ username }}"
     mode: '0644'
 
 - name: 'Install vim-better-whitespace'
   git:
     repo: "https://github.com/ntpeters/vim-better-whitespace.git"
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-better-whitespace"
+    dest: "{{ home_directory }}/.vim/bundle/vim-better-whitespace"
 
 - name: 'Install vim-ansible-yaml'
   git:
     repo: 'https://github.com/pearofducks/ansible-vim.git'
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/ansible-vim"
+    dest: "{{ home_directory }}/.vim/bundle/ansible-vim"
 
 - name: 'Install vim-json'
   git:
     repo: 'https://github.com/elzr/vim-json.git'
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-json"
+    dest: "{{ home_directory }}/.vim/bundle/vim-json"
 
 - name: 'Install vim-terraform'
   git:
     repo: 'https://github.com/hashivim/vim-terraform.git'
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/vim-terraform"
+    dest: "{{ home_directory }}/.vim/bundle/vim-terraform"
 
 - name: 'Install vim-dockerfile'
   git:
     repo: 'https://github.com/ekalinin/Dockerfile.vim.git'
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/Dockerfile"
+    dest: "{{ home_directory }}/.vim/bundle/Dockerfile"
 
 - name: 'Install tabular'
   git:
     repo: "https://github.com/godlygeek/tabular"
-    dest: "{{ lookup('env', 'HOME') }}/.vim/bundle/tabular"
+    dest: "{{ home_directory }}/.vim/bundle/tabular"
