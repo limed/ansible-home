@@ -61,7 +61,7 @@
   become_method: sudo
   file:
     path: '/docker'
-    owner: "{{ docker_username | default(lookup('env', 'USER')) }}"
-    group: "{{ docker_group | default("docker") }}"
+    owner: "{{ docker_username }}"
+    group: "{{ docker_group }}"
     mode: '0755'
     state: directory

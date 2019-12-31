@@ -14,7 +14,6 @@
     - role: 'docker'
       tags: docker
       docker_username: 'limed'
-      docker_group: 'limed'
     - role: 'git'
       tags: git
       git_user: 'limed'
