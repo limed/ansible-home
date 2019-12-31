@@ -21,7 +21,7 @@
 - name: 'Download and install pathogen'
   get_url:
     url: 'https://tpo.pe/pathogen.vim'
-    dest: "{{ home_directory }}"/.vim/autoload/pathogen.vim"
+    dest: "{{ home_directory }}/.vim/autoload/pathogen.vim"
     mode: '0644'
 
 - name: 'Copy vimrc'
