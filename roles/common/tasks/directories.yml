@@ -28,9 +28,6 @@
   become: yes
   become_method: sudo
   file:
-    path:
-      - '/data'
-      - '/data/sabnzbd'
-      - '/data/media'
+    path: '/data'
     mode: '0755'
     state: directory
