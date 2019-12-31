@@ -3,4 +3,3 @@
 - include: 'python.yml'
 - include: 'bash.yml'
 - include: 'directories.yml'
-#- include: 'scripts.yml'

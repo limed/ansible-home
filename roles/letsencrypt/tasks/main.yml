@@ -1,19 +1,18 @@
 ---
-- name: 'Copy le-renew script'
-  action: copy
-    src: 'le-renew'
-    dest: '/usr/local/sbin/le-renew'
+- name: Create /opt/acme dir
+  become: yes
+  become_method: sudo
+  file:
+    path: '/opt/acme'
     owner: root
     group: root
     mode: '0755'
+    state: directory
 
-- name: 'Create cron entry for le-renew'
-  action: cron
-    name: 'le-renew cert'
-    minute: 30
-    hour: 2
-    month: 1
-    user: root
-    job: /usr/local/sbin/le-renew {{ le_domain }} >> /var/log/le-renew.log
-    cron_file: le-renew
-
+- name: Download acme.sh script
+  get_url:
+    url: https://raw.githubusercontent.com/Neilpang/acme.sh/master/acme.sh
+    dest: '/opt/acme/acme.sh'
+    gid: root
+    uid: root
+    mode: 0755

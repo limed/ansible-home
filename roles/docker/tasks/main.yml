@@ -56,12 +56,12 @@
     group: 'docker'
     append: yes
 
-- name: 'Create docker volume folder'
+- name: 'Create docker directory'
   become: yes
   become_method: sudo
   file:
-    path: '/scratch/docker'
-    owner: "{{ docker_username }}"
-    group: "{{ docker_group }}"
-    mode: '0775'
+    path: '/docker'
+    owner: "{{ docker_username | default(lookup('env', 'USER')) }}"
+    group: "{{ docker_group | default("docker") }}"
+    mode: '0755'
     state: directory

@@ -6,6 +6,15 @@
     system: yes
     state: present
 
+- name: 'Create /media directory'
+  become: yes
+  become_method: sudo
+  file:
+    path: '/media'
+    group: 'docker'
+    mode: '0777'
+    state: directory
+
 - name: 'Create /scratch directory'
   become: yes
   become_method: sudo

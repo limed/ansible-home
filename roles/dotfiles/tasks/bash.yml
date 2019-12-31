@@ -1,0 +1,8 @@
+---
+- name: Create bash.d directory
+  file:
+    path: "{{ home_directory }}/.bash.d"
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: '0755'
+    state: directory
