@@ -36,7 +36,7 @@
   become: yes
   become_method: sudo
   file:
-    path: "/data/{{ items }}"
+    path: "/data/{{ item }}"
     mode: 0775
     group: docker
     state: directory
