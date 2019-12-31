@@ -1,0 +1,27 @@
+---
+pip_packages:
+  - boto3
+  - awscli
+  - docker-py
+
+apt_packages:
+  - git
+  - htop
+  - weechat
+  - curl
+  - jq
+  - unrar
+  - openssl
+  - ntpdate
+  #- python
+  - python3-pip
+  - python3-setuptools
+  - vim
+  - fail2ban
+  - gnupg
+  - keychain
+  - mtr-tiny
+  - rar
+  - screen
+  - tcpdump
+  - build-essential

@@ -3,9 +3,6 @@
   become: yes
   become_method: sudo
   pip:
-    name:
-      - boto3
-      - awscli
-      - docker-py
+    name: "{{ pip_packages }}"
     state: present
     executable: pip3
