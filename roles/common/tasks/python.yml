@@ -20,5 +20,6 @@
   become_method: sudo
   alternatives:
     name: pip
+    link: /usr/bin/pip
     path: /usr/bin/pip3
     priority: 10
