@@ -11,7 +11,8 @@
   become_method: sudo
   file:
     path: '/media'
-    group: 'docker'
+    owner: "{{ directory_user }}"
+    group: "{{ directory_group }}"
     mode: '0777'
     state: directory
 

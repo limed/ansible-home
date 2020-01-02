@@ -1,0 +1,3 @@
+---
+directory_user: "{{ lookup('env', 'USER') }}"
+directory_group: "{{ lookup('env', 'USER') }}"
