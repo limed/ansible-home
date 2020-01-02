@@ -26,3 +26,4 @@ apt_packages:
   - tcpdump
   - build-essential
   - nfs-common
+  - apache2-utils
