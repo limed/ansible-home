@@ -31,14 +31,21 @@
 
 - meta: flush_handlers
 
-- name: 'Install docker'
+- name: 'Uninstall obsolete docker packages'
   become: yes
   become_method: sudo
   apt:
     name:
       - docker-ce
       - docker-compose
-    state: present
+      - podman-docker
+      - containerd
+      - runc
+      - docker
+      - docker.io
+      - docker-engine
+      - docker-doc
+    state: absent
 
 - name: 'Start docker service'
   become: yes
@@ -48,13 +55,14 @@
     state: 'started'
     enabled: 'yes'
 
-    #- name: 'Add user to group docker'
-    #become: yes
-    #become_method: sudo
-    #user:
-      #name: "{{ docker_username }}"
-      #group: 'docker'
-      #append: yes
+- name: 'Add user to group docker'
+  become: yes
+  become_method: sudo
+  user:
+    name: "{{ item }}"
+    group: 'docker'
+    append: yes
+  with_items: "{{ docker_users }}"
 
 - name: 'Create docker directory'
   become: yes

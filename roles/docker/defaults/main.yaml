@@ -1,3 +1,12 @@
 ---
 docker_username: "{{ lookup('env', 'USER') }}"
 docker_group: "docker"
+
+# docker repo url
+docker_repo_url: https://download.docker.com/linux
+docker_apt_release_channel: stable
+docker_apt_ansible_distribution: "{{ 'ubuntu' if ansible_facts.distribution in ['Pop!_OS', 'Linux Mint'] else ansible_facts.distribution }}"
+docker_apt_gpg_key: "{{ docker_repo_url }}/{{ docker_apt_ansible_distribution | lower }}/gpg"
+docker_apt_filename: "docker"
+
+docker_users: []

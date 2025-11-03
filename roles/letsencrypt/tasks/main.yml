@@ -13,7 +13,7 @@
   become: yes
   become_method: sudo
   get_url:
-    url: https://raw.githubusercontent.com/Neilpang/acme.sh/master/acme.sh
+    url: https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
     dest: '/opt/acme/acme.sh'
     group: root
     owner: root
